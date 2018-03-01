@@ -1,6 +1,24 @@
 <h2>Patient Details</h2>
 <ul class = "patients"> 
-	<li *ngFor ="let patient of patients">
-		<span class="badge">{{patient.id}}</span> {{patient.name}}
+	<li *ngFor = "let patient of patients" 
+		[class.selected]="patient === selectedPatient"	
+		(click)= "onSelect(patient)">
+		<span class="badge">{{patient.id}}</span> 
+		<span class="badge">{{patient.add}}</span> {{patient.name}}
 	</li>
 </ul>
+
+<div *ngIf = "selectedPatient">
+
+	<h2>{{  selectedPatient.name | uppercase }} Details</h2>
+	<div><span>id: </span>{{selectedPatient.id}}</div>
+	<div>
+		<label>name:
+			<input [(ngModel)]="selectedPatient.name" placeholder= "name">
+		</label>
+		<label>address:
+			<input [(ngModel)]="selectedPatient.add" placeholder= "add">
+		</label>
+	</div>
+	
+</div>

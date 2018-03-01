@@ -10,8 +10,9 @@ import { PATIENTS } from '../mock-patients';
 })
 export class PatientComponent implements OnInit {
 	
-	patients = PATIENTS; // this line was a problem. patient = PATIENTS did 
-						//	not work. Not sure what patients is referring to
+	patients = PATIENTS;
+
+	selectedPatient: Patient;
 
 
   constructor() { }
@@ -19,4 +20,7 @@ export class PatientComponent implements OnInit {
   ngOnInit() {
   }
 
+  	onSelect(patient: Patient): void {
+		this.selectedPatient = patient;
+	}
 }

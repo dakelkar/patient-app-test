@@ -1,7 +1,7 @@
 /* patientsComponent's private CSS styles */
 .selected {
   background-color: #CFD8DC !important;
-  color: white;
+  color: red;
 }
 .patients {
   margin: 0 0 2em 0;
@@ -21,7 +21,7 @@
 }
 .patients li.selected:hover {
   background-color: #BBD8DC !important;
-  color: white;
+  color: pink;
 }
 .patients li:hover {
   color: #607D8B;
