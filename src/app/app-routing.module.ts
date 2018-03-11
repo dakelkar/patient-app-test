@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { RouterModule, Routes } from '@angular/router';
 
 import { PatientComponent } from './patient/patient.component';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
@@ -17,9 +18,10 @@ const routes: Routes = [
 
 @NgModule({
 
-  exports: [ RouterModule ],
+  imports: [ RouterModule.forRoot(routes) ],
 
-  imports: [ RouterModule.forRoot(routes) ], 
+  exports: [ RouterModule ],
+ 
   
   })
 

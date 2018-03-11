@@ -8,7 +8,7 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
 import { PatientService } from './patient.service';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
@@ -26,9 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   
   ],
   providers: [
-      PatientService,
-      MessageService
-      ],
+      PatientService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,11 +18,23 @@ export class PatientDetailComponent implements OnInit {
 	
   constructor(
     private route: ActivatedRoute,
-    private heroService: PatientService,
+    private patientService: PatientService,
     private location: Location
 ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getPatient();
   }
 
+  getPatient(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.patientService.getPatient(id)
+    .subscribe(patient => this.patient = patient);
+
+  }
+
+goBack(): void {this.location.back()
+ }
+
 }
+

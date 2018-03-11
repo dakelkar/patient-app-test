@@ -12,9 +12,10 @@ export class PatientService {
 
   constructor(private messageService: MessageService) { }
 
-getPatient(): Observable<Patient[]> {
+getPatient(id: number): Observable<Patient> {
 	// 	Todo: send the messsage_after_fetching patients
-	this.messageService.add('PatientService: fetched patients');
-    return of(PATIENTS);
+	this.messageService.add(`PatientService: fetched patient id =${id}`);
+    return of(PATIENTS.find(patient => patient.id === id));
+
   }
 }
