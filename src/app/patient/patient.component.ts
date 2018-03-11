@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Patient } from '../patient';
-import { PATIENTS } from '../mock-patients';
+import { PatientService } from '../patient.service';
 
 
 @Component({
@@ -10,17 +11,19 @@ import { PATIENTS } from '../mock-patients';
 })
 export class PatientComponent implements OnInit {
 	
-	patients = PATIENTS;
+  patients: Patient[];
 
-	selectedPatient: Patient;
+	
+  constructor(private PatientService: PatientService) { }
 
-
-  constructor() { }
 
   ngOnInit() {
+      this.getPatient();
   }
 
-  	onSelect(patient: Patient): void {
-		this.selectedPatient = patient;
-	}
+  getPatient(): void {
+      this.PatientService.getPatient()
+      .subscribe(patient => this.patients = patient);
+  }
+
 }
