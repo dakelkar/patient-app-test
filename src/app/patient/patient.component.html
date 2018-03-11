@@ -1,6 +1,6 @@
 <h2>Patient Details</h2>
 <ul class = "patient"> 
-	<li *ngFor = "let patient of patients" 
+	<li *ngFor = "let patient of patients"> 
 		<a routerLink = "/detail/{{patient.id}}">
 		  <span class="badge">{{patient.id}}</span> {{patient.name}}
         </a>

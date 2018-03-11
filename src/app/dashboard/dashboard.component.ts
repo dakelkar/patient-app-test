@@ -13,11 +13,17 @@ export class DashboardComponent implements OnInit {
   constructor(private patientService: PatientService) { }
  
   ngOnInit() {
+  	console.log("getting patients");
     this.getPatients();
   }
  
   getPatients(): void {
+  	console.log("really get patients");
+  	console.log("done!!");
     this.patientService.getPatient()
-      .subscribe(patients => this.patients = patients.slice(1, 5));
+      .subscribe(patients => {
+      	this.patients = patients.slice(1, 5);
+      	console.log(patients)
+      });
   }
 }
