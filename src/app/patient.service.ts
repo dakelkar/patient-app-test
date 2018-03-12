@@ -18,4 +18,8 @@ getPatient(id: number): Observable<Patient> {
     return of(PATIENTS.find(patient => patient.id === id));
 
   }
+  
+getPatients(): Observable<Patient[]> {
+ return of(PATIENTS);
+  }
 }

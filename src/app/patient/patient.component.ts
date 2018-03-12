@@ -18,12 +18,12 @@ export class PatientComponent implements OnInit {
 
 
   ngOnInit() {
-      this.getPatient();
+      this.getPatients();
   }
 
-  getPatient(): void {
-      this.PatientService.getPatient()
+  getPatients(): void {
+      this.PatientService.getPatients()
       .subscribe(patient => this.patients = patient);
   }
-
+//getPatients - when you return an arrsay it shoukd be plural
 }
